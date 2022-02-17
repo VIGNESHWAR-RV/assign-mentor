@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "d20ef6e9-70ec-49b5-aed4-c9d86bc4a91b",
+		"name": "mentor_and_student server check",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mentors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/mentors",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"mentors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific mentor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/mentors/620c6f3885414dd9ee85ee87",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"mentors",
+						"620c6f3885414dd9ee85ee87"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific mentor update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"add\":[\"620c6f4c85414dd9ee85ee8a\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/mentors/620c6f3885414dd9ee85ee87",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"mentors",
+						"620c6f3885414dd9ee85ee87"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/students",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific student",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/students/620c6f4c85414dd9ee85ee8a",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"students",
+						"620c6f4c85414dd9ee85ee8a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific student update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mentor\":\"620d34b585414dd9ee85ee8d\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/students/620d34c885414dd9ee85ee90",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"students",
+						"620d34c885414dd9ee85ee90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get specifc students of  mentors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"mentor\":\"620c6f3885414dd9ee85ee87\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mentor-assign-by-rv.herokuapp.com/get_students",
+					"protocol": "https",
+					"host": [
+						"mentor-assign-by-rv",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"get_students"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
