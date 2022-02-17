@@ -4,7 +4,7 @@ import { client } from "../index.js";
 import { updating_student_and_mentor } from "./updating_student_and_mentor.js";
 const route = express.Router();
 
-
+  //route to get all mentors
 route.get("/",async(request,response)=>{
 
     const mentors = await client.db("mentor_and_student")
@@ -14,7 +14,8 @@ route.get("/",async(request,response)=>{
 
     response.send(mentors);
 })
-
+   
+//route to get specific mentor
 route.get("/:_id",async(request,response)=>{
 
     
@@ -27,6 +28,13 @@ route.get("/:_id",async(request,response)=>{
     response.send(mentor);
 })
 
+  /*
+  In mentor section , multiple students can be added or removed..
+  so getting the result of changes as (students.add && students.remove)..
+
+  In UI only unAssigned students will be shown as option to add students using getiing_students route
+  but here we can also get the assigned students , uassign them and assign to new mentor
+  */
 route.post("/:_id",async(request,response)=>{
 
     const mentor_Id = request.params._id;  //getting mentor's Id from param

@@ -49,8 +49,8 @@ export async function updating_student_and_mentor(mentor_Id,students, pushing_or
 
     }
 
-    if (updation_In_Mentor && updation_In_Students) {
+    if (updation_In_Mentor && updation_In_Students) {  //responding after successfull mentor and student updation
         return {remove_Assigned, updation_In_Mentor, updation_In_Students };
     }
-    return "error";
+    return "error"; //responding with error if something fails
 }

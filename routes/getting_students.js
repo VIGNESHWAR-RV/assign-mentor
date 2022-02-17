@@ -9,7 +9,7 @@ route.get("/",async(request,response)=>{
 
     let student_ObjectIds = [];
 
-    if(mentor_Id !== "none"){
+    if(mentor_Id !== "none"){ //checking if the mentor_id is not "none"
 
     const mentor = await client.db("mentor_and_student")
                                .collection("mentors")
@@ -18,15 +18,19 @@ route.get("/",async(request,response)=>{
                                
   
            if(mentor.students){
-         
-                for(let id of mentor.students){
-                    student_ObjectIds.push(ObjectId(id));
-                }
+                //normal for looping style.. I like it though
+                // for(let id of mentor.students){
+                //     student_ObjectIds.push(ObjectId(id));
+                // }
+
+                 //doing the same loop with map 
+                student_ObjectIds = mentor.students.map((id)=>ObjectId(id));
          
           }
+
     }
 
-   const filter = (mentor_Id !== "none")
+   const filter = (mentor_Id !== "none")   //filter condition to get filtered students
                        ?{_id:{$in:student_ObjectIds}}
                        :{mentor:null};
   
@@ -35,7 +39,7 @@ route.get("/",async(request,response)=>{
                                  .find(filter)
                                  .toArray();
                           
-    response.send(students);
+    response.send(students); //responding with the filtered students
   
   });
 
