@@ -3,22 +3,23 @@ import { client } from "../index.js";
 
 export async function updating_student_and_mentor(mentor_Id,students, pushing_or_pulling, setting_or_unsetting) {
 
-    //checking whether students in list are already assigned to mentor
-    const already_Assigned = await   client.db("mentor_and_student")
-                                           .collection("mentors")
-                                           .find({students:{$in:students}})
-                                           .toArray();
-    let remove_Assigned = {};
+    // //checking whether students in list are already assigned to mentor
+    // const already_Assigned = await   client.db("mentor_and_student")
+    //                                        .collection("mentors")
+    //                                        .find({students:{$in:students}})
+    //                                        .toArray();
+    // let remove_Assigned = {};
 
-    if(already_Assigned){
+    // if(already_Assigned){
+        
             //removing if already present
-              remove_Assigned = await client.db("mentor_and_student")
+         let  remove_Assigned = await client.db("mentor_and_student")
                                             .collection("mentors")
                                             .updateMany({students:{$in:students}},
                                                        {$pull:{students:{$in:students}}})
                                             
                               
-    }
+    // }
 
 
     let updation_In_Students;

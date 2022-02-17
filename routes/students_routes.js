@@ -34,19 +34,19 @@ route.post("/:_id",async(request,response)=>{
     const mentor_Id = request.body.mentor;   //mentor id from body
 
    //checking student id , if he is already assigned
-        const already_Assigned = await   client.db("mentor_and_student")
-                                            .collection("mentors")
-                                            .findOne({students:student_Id});
-        let remove_Assigned = {};
-        if(already_Assigned){
+        // const already_Assigned = await   client.db("mentor_and_student")
+        //                                     .collection("mentors")
+        //                                     .findOne({students:student_Id});
+        // let remove_Assigned = {};
+        // if(already_Assigned){
 
             //removing student id , if he is already present
-          remove_Assigned = await client.db("mentor_and_student")
-                                        .collection("mentors")
-                                        .updateOne({students:student_Id},
-                                                   {$pull:{students:student_Id}});
+        let remove_Assigned = await client.db("mentor_and_student")
+                                          .collection("mentors")
+                                          .updateOne({students:student_Id},
+                                                     {$pull:{students:student_Id}});
          
-        }
+        // }
            //removing mentor details from specific student , if mentor_id is "none"
         if(mentor_Id==="none"){
 
