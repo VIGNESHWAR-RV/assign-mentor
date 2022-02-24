@@ -35,7 +35,7 @@ route.get("/:_id",async(request,response)=>{
   In UI only unAssigned students will be shown as option to add students using getiing_students route
   but here we can also get the assigned students , uassign them and assign to new mentor
   */
-route.post("/:_id",async(request,response)=>{
+route.put("/:_id",async(request,response)=>{
 
     const mentor_Id = request.params._id;  //getting mentor's Id from param
 

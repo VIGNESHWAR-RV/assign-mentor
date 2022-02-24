@@ -27,7 +27,7 @@ route.get("/:_id",async(request,response)=>{
 })
   
 // update the changes in mentorShip for particular student;
-route.post("/:_id",async(request,response)=>{
+route.put("/:_id",async(request,response)=>{
 
     const student_Id = request.params._id;  //student id from params
 

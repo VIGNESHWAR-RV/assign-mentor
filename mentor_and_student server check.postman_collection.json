@@ -76,7 +76,7 @@
 		{
 			"name": "specific mentor update",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -166,7 +166,7 @@
 		{
 			"name": "specific student update",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
